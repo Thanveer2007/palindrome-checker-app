@@ -2,20 +2,31 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 
+
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String text = "madam";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String original = sc.nextLine();
 
         String reversed = "";
-        for (int i = text.length() - 1; i >= 0; i--) {
-            reversed += text.charAt(i);
+
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
-        if (text.equalsIgnoreCase(reversed)) {
-            System.out.println(text + " is a Palindrome.");
+
+        if (original.equals(reversed)) {
+            System.out.println("It is a Palindrome.");
         } else {
-            System.out.println(text + " is NOT a Palindrome.");
+            System.out.println("It is NOT a Palindrome.");
         }
+
+        sc.close();
     }
 }
+
+
