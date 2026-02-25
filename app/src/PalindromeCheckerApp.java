@@ -5,32 +5,34 @@
 
 
 import java.util.Scanner;
+import java.util.Stack;
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        Stack<Character> stack = new Stack<>();
 
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
 
-        char[] chars = input.toCharArray();
+        for (int i = 0; i < input.length(); i++) {
+            stack.push(input.charAt(i));
+        }
 
-        int start = 0;
-        int end = chars.length - 1;
         boolean isPalindrome = true;
 
 
-        while (start < end) {
-            if (chars[start] != chars[end]) {
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
+        // Print result
         if (isPalindrome) {
             System.out.println("It is a Palindrome.");
         } else {
@@ -40,6 +42,7 @@ public class PalindromeCheckerApp {
         sc.close();
     }
 }
+
 
 
 
