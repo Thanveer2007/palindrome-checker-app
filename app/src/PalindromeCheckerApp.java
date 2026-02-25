@@ -5,9 +5,19 @@
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Palindrome Checker Management System");
-        System.out.println("version : 1.0");
-        System.out.println("System initialized sucessfully");
 
+        String text = "madam";
+
+        String reversed = "";
+
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed += text.charAt(i);
+        }
+
+        if (text.equalsIgnoreCase(reversed)) {
+            System.out.println(text + " is a Palindrome.");
+        } else {
+            System.out.println(text + " is NOT a Palindrome.");
+        }
     }
 }
